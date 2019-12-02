@@ -1,0 +1,19 @@
+#%RAML 1.0
+title: unitedapi
+baseUri: https://anypoint.mulesoft.com/mocking/api/v1/links/b9529395-d0f2-4a55-892b-e9d6c899baef/api # baseUri: http://localhost:8081/api
+/unitedflights:
+  get: 
+    responses: 
+      200:
+        body: 
+          application/json: 
+            example: !include examples/unitedFlightsByDestination-get-response.json
+
+  /{destination}:
+    get:
+      responses: 
+        200:
+          body: 
+            application/json: 
+               example: !include examples/listAllUnitedFlights-get-response.json
+      
